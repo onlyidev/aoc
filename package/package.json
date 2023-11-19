@@ -1,0 +1,17 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "Advent Of Code Startup Script",
+  "main": "main.js",
+  "scripts": {
+    "start": "node aoc-init.js"
+  },
+  "bin": {
+    "aoc": "./main.js"
+  },
+  "keywords": [
+    "AOC"
+  ],
+  "author": "onlyidev",
+  "license": "MIT"
+}
