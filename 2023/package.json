@@ -1,0 +1,19 @@
+{
+  "name": "aoc_2023",
+  "version": "1.0.0",
+  "description": "Advent Of Code 2023",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [
+    "AOC"
+  ],
+  "author": "onlyidev",
+  "license": "MIT",
+  "devDependencies": {
+    "aoc": "file:../package"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
