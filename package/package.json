@@ -13,5 +13,9 @@
     "AOC"
   ],
   "author": "onlyidev",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "jsdom": "^23.0.1"
+  }
 }

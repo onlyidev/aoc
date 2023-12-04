@@ -12,16 +12,20 @@ mkdirSync(`../${year}`);
 if (allFiles.includes(".template"))
     cpSync(".template", `../${year}/`, { recursive: true });
 
-readFile(`../${year}/package.json`, (err, data) => {
-    if (err)
-        throw err;
-    const result = data.toString().replace(/\$year/gm, year.toString());
-    console.log(result);
-    writeFile(`../${year}/package.json`, result, 'utf8', (err) => {
-        if (err)
-            throw err;
-    });
-});
+replaceInFile(`../${year}/package.json`, /\$year/gm, year.toString());
+replaceInFile(`../${year}/.env`, /\$year/gm, year.toString());
 
 process.chdir(`../${year}`);
-exec("npm i && npx aoc")
+exec("npm i")
+
+function replaceInFile(file, regex, replacement) {
+    readFile(file, (err, data) => {
+        if (err)
+            throw err;
+        const result = data.toString().replace(regex, replacement);
+        writeFile(file, result, 'utf8', (err) => {
+            if (err)
+                throw err;
+        });
+    });
+}
